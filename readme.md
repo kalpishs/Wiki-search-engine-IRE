@@ -68,10 +68,10 @@ where t=title,b=body,c=category,e:external links,i:info-box
 	            Output Format
 ==============================================================================================================================
 
-#index file
+# index file
 
-->word-<df>?doc_id:<title count>,<category count>,<infobox count>,<body count>,<external link count>;..;
 
+=> word-<df>?doc_id:<title count>,<category count>,<infobox count>,<body count>,<external link count>;..;
 
 
 eg:-
@@ -80,20 +80,20 @@ ledzi-1?6256:,,,1,; # represnt ledzi is in document 6256 1 time in body
 
 
 
-#Query processor
+# Query processor
 
 
--enter the number of quarries you want to process:<eg:-2>
+a) enter the number of quarries you want to process:<eg:-2>
 
 
--enter your query:<enter user query>
+b) enter your query:<enter user query>
 
 
--Time taken in Result Generation: ...milisec
+c) Time taken in Result Generation: ...milisec
 
 
 
-#Assumption
+# Assumption
 
 
 	i) xml-wiki dump #present in parent directory of code directory
