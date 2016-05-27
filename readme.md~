@@ -87,5 +87,6 @@ ledzi-1?6256:,,,1,; # represnt ledzi is in document 6256 1 time in body
 #Assumption
 
 	i) xml-wiki dump #present in parent directory of code directory
+	
 	ii) output folders should be present in parent directory
 
