@@ -68,47 +68,28 @@ where t=title,b=body,c=category,e:external links,i:info-box
 	            Output Format
 ==============================================================================================================================
 
-# index file
 
 
-=> word-<df>?doc_id:<title count>,<category count>,<infobox count>,<body count>,<external link count>;..;
+#Index file
 
+-> word-<df>?doc_id:<title count>,<category count>,<infobox count>,<body count>,<external link count>;....;
 
+eg:-ledzi-1?6256:,,,1,; it represnt ledzi is in document 6256 1 time in body .
 
-
-eg:-
-ledzi-1?6256:,,,1,; # represnt ledzi is in document 6256 1 time in body 
-
-
-
-
-
-==============================================================================================================================
 #Query processor
-==============================================================================================================================
-
 
 a) enter the number of quarries you want to process:<eg:-2>
 
-
 b) enter your query:<enter user query>
-
 
 c) Time taken in Result Generation: ...milisec
 
-
-
-
-
-
-==============================================================================================================================
-#Assumption
-==============================================================================================================================
-
+# Assumption
 
 	i) xml-wiki dump #present in parent directory of code directory
 
 
 	
 	ii) output folders should be present in parent directory
+
 
