@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Wiki-search-engine-ire by kalpishs</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/kalpishs/Wiki-search-engine-IRE">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Wiki-search-engine-ire</h1>
+            <h2>A Search Engine Wiki Dump </h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/kalpishs/Wiki-search-engine-IRE/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/kalpishs/Wiki-search-engine-IRE/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <hr>
+
+<p>Kalpish Singhal</p>
+
+<hr>
+
+<h1></h1>
+
+<pre><code>           Indexing mechanism for search egine 
+</code></pre>
+
+<h1></h1>
+
+<p>-&gt; The code basically implement INDEX CREATION MODULE for seach engin </p>
+
+<p>-&gt; It reads the content of XML File and SAX Parser passes it</p>
+
+<p>-&gt; Character by character it scans the text and extracts words for indexing</p>
+
+<p>-&gt; sorted posting list on term frequency</p>
+
+<p>-&gt; Amended every word with D.F in indexing </p>
+
+<h1></h1>
+
+<pre><code>           Files LIST With One Line Disciption
+</code></pre>
+
+<h1></h1>
+
+<p>(i)  Driver.java //contains main function takes Xml "wiki dump" as comandline input and calls Handller_pars for handling </p>
+
+<p>(ii) Handller_pars.java //contains parsing handling mechanism to remove scrap and send words for parsing into map</p>
+
+<p>(iii)help_parsing.java //helps in parsing the content removing stop words stemming it using Stemmer.java</p>
+
+<p>(iv) Stemmer.java //stemm the word to its root form and return it to the calling function </p>
+
+<p>(iv) Writeing_to_file.java //it writes o/p to the given comaand line input filr if file not exist it will create new file </p>
+
+<p>(v)  listing.java //Class defination for using ojects to keep count to be maped into the map </p>
+
+<p>vi) merge_index.java //this merges the complete index files created by writing the file</p>
+
+<p>Vii) post_index_processing.java //This processes the merged index to built sorted index with DF of each term </p>
+
+<p>viii) Driver_title.java //This is main class to extract title corrsponding to the document id and save to file#this can be merged with 
+driver.java but title document number mapping where not initially part of the statement project</p>
+
+<p>ix) Map_title.java//this writes title to the file with wiki_doc_id</p>
+
+<p>X) title_id_processor.java //processes the titel built above to make secondary and tertiary title_index</p>
+
+<p>xi)Query_processor.java //used for proceesing user quries to give the  desired document </p>
+
+<h1></h1>
+
+<pre><code>            Implemented characteristics
+</code></pre>
+
+<h1></h1>
+
+<p>-&gt; Used tree Hash map for SortedMap order of the keys will be sorted. so sorted according to word A-Z</p>
+
+<p>-&gt; Not storing zeros in index file. helps in reducing </p>
+
+<p>-&gt; One go parssing :- data is parsed in one go to reduce time </p>
+
+<p>-&gt; Stop words are removed to make index efficent except from title in the view for seacrch of titles like "to be not to be" type query </p>
+
+<p>-&gt; infobox is parsed to get relevent data.</p>
+
+<p>-&gt;Query time: &lt;=1sec per query Query can be single word (Sachin) or multi-word(Sachin Tendulkar India) or fielded query(t:sachin b:india), 
+where t=title,b=body,c=category,e:external links,i:info-box</p>
+
+<h1></h1>
+
+<pre><code>            Output Format
+</code></pre>
+
+<h1></h1>
+
+<h1>
+<a id="index-file" class="anchor" href="#index-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Index file</h1>
+
+<p>-&gt; word-?doc_id:,,,,;....;</p>
+
+<p>eg:-ledzi-1?6256:,,,1,; it represnt ledzi is in document 6256 1 time in body .</p>
+
+<h1>
+<a id="query-processor" class="anchor" href="#query-processor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Query processor</h1>
+
+<p>a) enter the number of quarries you want to process:eg:-2</p>
+
+<p>b) enter your query:</p>
+
+<p>c) Time taken in Result Generation: ...milisec</p>
+
+<h1>
+<a id="assumption" class="anchor" href="#assumption" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Assumption</h1>
+
+<pre><code>i) xml-wiki dump #present in parent directory of code directory
+
+
+
+ii) output folders should be present in parent directory
+</code></pre>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/kalpishs">kalpishs</a> can be found on <a href="https://github.com/kalpishs/Wiki-search-engine-IRE">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
